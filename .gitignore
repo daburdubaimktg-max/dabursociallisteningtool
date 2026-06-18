@@ -1,0 +1,16 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.ruff_cache/
+*.sqlite
+*.db
+
+# Node / dashboard
+node_modules/
+dist/
+
+# Env / secrets — NEVER commit tokens (Apify, platform API keys)
+.env
+.env.*
