@@ -20,9 +20,7 @@ _BRAND_ALIASES: dict[str, list[str]] = {
 
 
 def tag_brands(record: NormalizedRecord) -> NormalizedRecord:
-    haystack = " ".join(
-        [record.caption_or_title or "", *(record.hashtags or [])]
-    ).lower()
+    haystack = " ".join([record.caption_or_title or "", *(record.hashtags or [])]).lower()
     tags = [
         brand
         for brand, aliases in _BRAND_ALIASES.items()

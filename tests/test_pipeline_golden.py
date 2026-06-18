@@ -7,7 +7,7 @@ Also asserts Rule 1: comments are scored on original text, and text_en is displa
 
 from adapters.tiktok.adapter import TikTokAdapter
 from adapters.tiktok.provider import FixtureProvider
-from core.schema import CollectRequest, InputType, Platform, SentimentLabel
+from core.schema import CollectRequest, InputType, Platform
 from nlp.stub import StubNLPService
 from pipeline.run import run_job
 from pipeline.store import Store
@@ -34,9 +34,7 @@ def test_pipeline_runs_end_to_end():
 def test_arabic_and_arabizi_detected_correctly():
     """Addition #1: at least one Arabic and one Arabizi comment, tagged correctly."""
     _, store = _run()
-    rows = store._conn.execute(
-        "SELECT comment_id, comment_json FROM silver_comments"
-    ).fetchall()
+    rows = store._conn.execute("SELECT comment_id, comment_json FROM silver_comments").fetchall()
     import json
 
     by_id = {r[0]: json.loads(r[1]) for r in rows}
@@ -64,18 +62,15 @@ def test_sentiment_scored_in_language_with_model_version():
 def test_golden_sentiment_labels():
     """Snapshot the per-comment labels from the deterministic stub."""
     _, store = _run()
-    import json
 
-    rows = store._conn.execute(
-        "SELECT comment_id, sentiment_label FROM silver_comments"
-    ).fetchall()
+    rows = store._conn.execute("SELECT comment_id, sentiment_label FROM silver_comments").fetchall()
     labels = {r[0]: r[1] for r in rows}
     assert labels == {
         "c_0001": "positive",  # Arabic: رائع / أحب / أنصح
         "c_0002": "positive",  # Arabizi: 7elo / 3ajabni / 🔥
         "c_0003": "negative",  # fake / terrible / leaks
         "c_0004": "positive",  # love / best
-        "c_0005": "neutral",   # availability question
+        "c_0005": "neutral",  # availability question
     }
 
 

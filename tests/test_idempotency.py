@@ -61,4 +61,4 @@ def test_new_comment_appends_without_duplicating(tmp_path):
     run_job(_request(), TikTokAdapter(provider=FixtureProvider(updated)), StubNLPService(), store)
 
     assert store.comment_count() == 6  # 5 + 1 new, no duplicates
-    assert store.post_count() == 1     # same post, updated in place
+    assert store.post_count() == 1  # same post, updated in place

@@ -37,8 +37,20 @@ def test_reach_is_not_an_input_to_sentiment():
     tries to fold likes/views/shares/followers into Net Sentiment, this test fails.
     """
     reach_terms = {
-        "like", "likes", "view", "views", "share", "shares", "save", "saves",
-        "follower", "followers", "engagement", "reach", "metric", "metrics",
+        "like",
+        "likes",
+        "view",
+        "views",
+        "share",
+        "shares",
+        "save",
+        "saves",
+        "follower",
+        "followers",
+        "engagement",
+        "reach",
+        "metric",
+        "metrics",
     }
     for fn in (net_sentiment_score, net_sentiment_from_labels):
         params = inspect.signature(fn).parameters

@@ -29,15 +29,41 @@ _ARABIZI_TOKENS = {"wallah", "shu", "akhbarak", "ktir", "kteer", "ya", "habibi",
 # Tiny deterministic sentiment lexicons. A real model replaces this entirely.
 _POS = {
     # english
-    "love", "best", "amazing", "great", "perfect", "good", "recommend", "shine",
-    "wonderful", "nice",
+    "love",
+    "best",
+    "amazing",
+    "great",
+    "perfect",
+    "good",
+    "recommend",
+    "shine",
+    "wonderful",
+    "nice",
     # arabizi
-    "7elo", "helo", "7ilo", "3ajabni", "ajabni", "zwin", "mzyan", "tamam",
+    "7elo",
+    "helo",
+    "7ilo",
+    "3ajabni",
+    "ajabni",
+    "zwin",
+    "mzyan",
+    "tamam",
 }
 _NEG = {
     # english
-    "fake", "terrible", "leak", "leaks", "bad", "worst", "hate", "counterfeit",
-    "scam", "broken", "broke", "awful", "disappointed",
+    "fake",
+    "terrible",
+    "leak",
+    "leaks",
+    "bad",
+    "worst",
+    "hate",
+    "counterfeit",
+    "scam",
+    "broken",
+    "broke",
+    "awful",
+    "disappointed",
 }
 # Arabic is matched by substring (no whitespace tokenization assumptions).
 _POS_AR = ["رائع", "أحب", "احب", "ممتاز", "جميل", "أنصح", "انصح", "حلو", "رهيب"]
@@ -67,7 +93,7 @@ class StubNLPService(NLPService):
 
     # --- score (in original language — Rule 1) ----------------------------------
     def score(self, text: str, language: str) -> Sentiment:
-        t = (text or "")
+        t = text or ""
         lower = t.lower()
         tokens = set(re.findall(r"[a-z0-9']+", lower))
         emojis = set(extract_emojis(t))
