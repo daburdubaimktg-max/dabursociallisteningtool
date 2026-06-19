@@ -17,14 +17,9 @@ import re
 
 from core.schema import Sentiment, SentimentLabel
 from nlp.contract import Detection, NLPService
-from pipeline.text_utils import extract_emojis, has_arabic_script
+from pipeline.text_utils import extract_emojis, has_arabic_script, is_arabizi
 
 MODEL_VERSION = "stub"
-
-# Latin script with Arabic-chat numeral substitution (3=ع, 7=ح, 2=ء, 5=خ, 9=ق) — the
-# Arabizi signal that standard language-ID misreads as English/French (CLAUDE.md §3).
-_ARABIZI_NUM_RE = re.compile(r"[a-z][235679]|[235679][a-z]")
-_ARABIZI_TOKENS = {"wallah", "shu", "akhbarak", "ktir", "kteer", "ya", "habibi", "yalla"}
 
 # Tiny deterministic sentiment lexicons. A real model replaces this entirely.
 _POS = {
@@ -83,9 +78,7 @@ class StubNLPService(NLPService):
         if has_arabic_script(t):
             return Detection(language="ar", dialect="MSA", confidence=0.95)
 
-        lower = t.lower()
-        tokens = set(re.findall(r"[a-z0-9']+", lower))
-        if _ARABIZI_NUM_RE.search(lower) or (tokens & _ARABIZI_TOKENS):
+        if is_arabizi(t):
             # Latin-script Arabic — route to the Arabic/dialect path, NOT English.
             return Detection(language="arabizi", dialect="Levantine", confidence=0.8)
 

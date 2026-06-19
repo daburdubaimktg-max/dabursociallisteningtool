@@ -54,9 +54,32 @@ cd dashboard && npm install && npm run dev   # proxies /api -> :8000
 
 ## NLP backend selection
 `NLP_BACKEND=stub` (default in dev) uses the deterministic non-production stub. It is
-**refused in production** (`ENV=production`). The real self-hosted transformer service
-(MARBERT / CAMeLBERT / NLLB-200) slots in behind the same contract and must pass
-`tests/test_nlp_contract.py`.
+**refused in production** (`ENV=production`).
+
+`NLP_BACKEND=transformer` selects the real, self-hosted MARBERT-backed service
+(`nlp/transformer_service.py`): language detection (Arabic-script + Arabizi heuristics,
+LID model for Latin scripts) followed by **in-language** sentiment scoring (Rule 1) on a
+MARBERT-family model for Arabic/Arabizi and a multilingual XLM-R model for English/Latin.
+Scores are stamped `model_version="marbert:<model-id>"`. `translate` is a marked,
+display-only passthrough until the NLLB-200 / GPU slice (`[mt-pending]`).
+
+Install the (heavy) backend deps — kept out of `dev`/CI so the default suite stays
+GPU-free:
+```bash
+pip install -e ".[transformer]"
+```
+Model ids are env-overridable and pinned via the registry in production:
+`NLP_AR_SENTIMENT_MODEL`, `NLP_AR_MAGHREBI_SENTIMENT_MODEL`, `NLP_EN_SENTIMENT_MODEL`,
+`NLP_LID_MODEL`, `NLP_AR_DIALECT_MODEL`.
+
+Both backends satisfy the **same** contract: `tests/test_nlp_contract.py` runs its spec
+over the stub and the transformer service. The transformer parameter auto-skips when the
+deps/weights aren't present (e.g. CPU CI), so it validates the real service wherever it
+can be exercised without breaking the lean default run.
+
+> Accuracy/F1 against a frozen held-out MENA eval set is the production-promotion gate
+> and is **deferred until we have labeled data** — the default model ids are sensible
+> starting points, not yet validated for reporting.
 
 ## Secrets
 Tokens (Apify, platform APIs) come from the environment only — never code/config.
