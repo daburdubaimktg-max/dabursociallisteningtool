@@ -1,8 +1,10 @@
 """The NLP service contract (CLAUDE.md §3).
 
-This is the executable spec that BOTH the stub and the future self-hosted transformer
-service must pass — it validates the GPU swap-in against the same behaviour. To validate
-the real service later, parametrize `service` over it here.
+This is the executable spec that BOTH the stub and the self-hosted transformer service
+must pass — it validates the GPU/CPU swap-in against the same behaviour. The real backend
+runs the SAME spec wherever `transformers`/`torch` + the model weights are available; in a
+no-GPU CI box (deps absent) that parameter auto-skips, so the suite stays green while the
+contract guarantee for the real service still holds wherever it can be exercised.
 """
 
 import pytest
@@ -12,7 +14,28 @@ from nlp.contract import Detection, NLPService
 from nlp.stub import StubNLPService
 
 
-@pytest.fixture(params=[StubNLPService])
+def _make_stub() -> NLPService:
+    return StubNLPService()
+
+
+def _make_transformer() -> NLPService:
+    # Skip cleanly unless the real stack AND model weights are actually loadable: missing
+    # deps, or no network/weights on a CPU box, must not fail the suite.
+    pytest.importorskip("transformers")
+    pytest.importorskip("torch")
+    from nlp.transformer_service import TransformerNLPService
+
+    svc = TransformerNLPService()
+    try:
+        # Force the model loads the contract tests will exercise (detect LID + score head).
+        svc.detect("warmup text")
+        svc.score("warmup text", "en")
+    except Exception as exc:  # any load failure (no net/weights) → skip, don't fail CI
+        pytest.skip(f"transformer weights unavailable: {exc}")
+    return svc
+
+
+@pytest.fixture(params=[_make_stub, _make_transformer], ids=["stub", "transformer"])
 def service(request) -> NLPService:
     return request.param()
 

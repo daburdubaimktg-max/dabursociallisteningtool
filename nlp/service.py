@@ -31,7 +31,13 @@ def get_service() -> NLPService:
                 "Set NLP_BACKEND to the real transformer service."
             )
         return StubNLPService()
-    # The real MARBERT/CAMeLBERT/NLLB-backed service is registered here in a later slice.
+    if backend in ("transformer", "marbert"):
+        # Real, self-hosted MARBERT-backed detect+score (CLAUDE.md §3). Heavy deps are
+        # imported lazily inside the service, so this only requires the `transformer`
+        # extra to be installed (`pip install -e ".[transformer]"`).
+        from nlp.transformer_service import TransformerNLPService
+
+        return TransformerNLPService()
     raise RuntimeError(f"NLP backend '{backend}' is not available yet.")
 
 

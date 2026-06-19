@@ -18,6 +18,11 @@ _EMOJI_RE = re.compile(
 
 _ARABIC_RE = re.compile(r"[؀-ۿݐ-ݿ]")
 
+# Latin script with Arabic-chat numeral substitution (3=ع, 7=ح, 2=ء, 5=خ, 9=ق) — the
+# Arabizi signal that standard language-ID misreads as English/French (CLAUDE.md §3).
+_ARABIZI_NUM_RE = re.compile(r"[a-z][235679]|[235679][a-z]")
+_ARABIZI_TOKENS = {"wallah", "shu", "akhbarak", "ktir", "kteer", "ya", "habibi", "yalla"}
+
 
 def extract_hashtags(text: str) -> list[str]:
     return _HASHTAG_RE.findall(text or "")
@@ -29,3 +34,11 @@ def extract_emojis(text: str) -> list[str]:
 
 def has_arabic_script(text: str) -> bool:
     return bool(_ARABIC_RE.search(text or ""))
+
+
+def is_arabizi(text: str) -> bool:
+    """Latin-script Arabic (chat-alphabet). Load-bearing: this MUST route to the Arabic
+    sentiment path, never be mislabeled English/French by a generic LID model (Rule 1)."""
+    lower = (text or "").lower()
+    tokens = set(re.findall(r"[a-z0-9']+", lower))
+    return bool(_ARABIZI_NUM_RE.search(lower) or (tokens & _ARABIZI_TOKENS))

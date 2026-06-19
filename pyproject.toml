@@ -15,6 +15,15 @@ dev = [
     "pytest>=8.0",
     "ruff>=0.4",
 ]
+# Real, self-hosted NLP backend (MARBERT-family detect+score). Deliberately NOT in `dev`
+# so CI stays lean and GPU-free; install explicitly to run the transformer backend and
+# exercise the real half of the NLP contract test: `pip install -e ".[transformer]"`.
+transformer = [
+    "transformers>=4.40",
+    "torch>=2.2",
+    "sentencepiece>=0.2",
+    "protobuf>=4",
+]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
