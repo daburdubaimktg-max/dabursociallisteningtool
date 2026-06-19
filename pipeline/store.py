@@ -101,3 +101,22 @@ class Store:
             "SELECT sentiment_label FROM silver_comments WHERE sentiment_label IS NOT NULL"
         ).fetchall()
         return [r[0] for r in rows]
+
+    # --- gold read model --------------------------------------------------------
+    # The dashboard reads everything through these two loaders. Aggregation/filtering
+    # lives in kpi/rollups.py so the storage layer stays a thin, swappable boundary.
+    def load_posts(self) -> list[dict]:
+        rows = self._conn.execute("SELECT record_json FROM silver_posts").fetchall()
+        return [json.loads(r[0]) for r in rows]
+
+    def load_comments(self) -> list[dict]:
+        rows = self._conn.execute(
+            "SELECT platform, post_id, comment_json FROM silver_comments"
+        ).fetchall()
+        out = []
+        for platform, post_id, cj in rows:
+            c = json.loads(cj)
+            c["platform"] = platform
+            c["post_id"] = post_id
+            out.append(c)
+        return out

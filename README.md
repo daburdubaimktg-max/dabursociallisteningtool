@@ -34,7 +34,7 @@ slice is green).
 ### Backend + tests
 ```bash
 pip install -e ".[dev]"
-pytest                       # 23 tests
+pytest                       # 37 tests
 uvicorn api.main:app --reload   # http://localhost:8000
 ```
 
@@ -51,6 +51,23 @@ curl localhost:8000/kpi/net-sentiment
 ```bash
 cd dashboard && npm install && npm run dev   # proxies /api -> :8000
 ```
+On first load the dashboard seeds itself by running the recorded fixtures through the
+**real** pipeline (`POST /seed`) — no mock data — then reads everything live from the API.
+
+**Read-set** (CLAUDE.md §4), every view filterable by brand · market · platform · date ·
+sentiment, with filter state held in the URL and every chart drilling to the scored post
+explorer:
+
+| Group | Views |
+| --- | --- |
+| **Reach & engagement** (separate from sentiment — Rule 2) | volume + total engagement, Share of Voice, top hashtags, top authors, language distribution (incl. Arabizi share) |
+| **Sentiment** | Net Sentiment + split (overall and by platform/brand/market), Net Sentiment over time, sentiment-segmented word cloud (positive/neutral/negative toggle, Arabic stopword removal + RTL font, English gloss on hover) |
+| **Drill target** | scored post explorer — original text + English display, sentiment chip, brand, market, engagement, author, confidence, source link |
+
+Read endpoints (all accept the same filters): `/filters`, `/kpi/volume`,
+`/kpi/sentiment-split`, `/kpi/net-sentiment`, `/kpi/net-sentiment-trend`,
+`/kpi/share-of-voice`, `/kpi/word-cloud`, `/kpi/top-hashtags`, `/kpi/top-authors`,
+`/kpi/language-distribution`, `/posts`.
 
 ## NLP backend selection
 `NLP_BACKEND=stub` (default in dev) uses the deterministic non-production stub. It is
