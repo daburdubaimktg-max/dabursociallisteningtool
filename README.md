@@ -60,4 +60,5 @@ cd dashboard && npm install && npm run dev   # proxies /api -> :8000
 
 ## Secrets
 Tokens (Apify, platform APIs) come from the environment only — never code/config.
-`APIFY_TOKEN` enables live TikTok collection; without it the fixture provider is used.
+`APIFY_TOKEN` enables live TikTok and Instagram collection; without it each adapter's
+fixture provider (a recorded Apify payload) is used, so tests/CI run fully offline.
