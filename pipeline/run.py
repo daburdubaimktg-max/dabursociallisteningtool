@@ -15,7 +15,7 @@ from adapters.base import Adapter
 from core.schema import CollectRequest, NormalizedRecord
 from kpi.net_sentiment import NetSentiment, net_sentiment_from_labels
 from nlp.contract import NLPService
-from pipeline.enrich import tag_brands
+from pipeline.enrich import tag_brands, tag_markets
 from pipeline.store import Store
 from core.schema import SentimentLabel
 
@@ -51,7 +51,7 @@ def process_record(record: NormalizedRecord, nlp: NLPService) -> NormalizedRecor
         c.text_en = text_en
         c.sentiment = sent
 
-    return tag_brands(record)
+    return tag_markets(tag_brands(record))
 
 
 def run_job(
