@@ -1,0 +1,611 @@
+[
+  {
+    "brand": "Vatika",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "vatika.arabia",
+    "tiktok_handle": "vatika.arabia"
+  },
+  {
+    "brand": "Vaseline",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "vaselinearabia",
+    "tiktok_handle": "vaselinearabia"
+  },
+  {
+    "brand": "Oral B",
+    "category": "Oral Care",
+    "region": "Arabia",
+    "instagram_handle": "oralbarabia",
+    "tiktok_handle": "oralbarabia"
+  },
+  {
+    "brand": "Dabur Herbal",
+    "category": "Oral Care",
+    "region": "Arabia",
+    "instagram_handle": "daburherbal",
+    "tiktok_handle": "daburherbal"
+  },
+  {
+    "brand": "Signal",
+    "category": "Oral Care",
+    "region": "Arabia",
+    "instagram_handle": "signal.arabia",
+    "tiktok_handle": "signal.arabia"
+  },
+  {
+    "brand": "Tresemme",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "tresemmearabia",
+    "tiktok_handle": "tresemmearabia"
+  },
+  {
+    "brand": "Himalaya",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "himalayaarabia",
+    "tiktok_handle": "himalayaarabia"
+  },
+  {
+    "brand": "Colgate",
+    "category": "Oral Care",
+    "region": "Arabia",
+    "instagram_handle": "colgatearabia",
+    "tiktok_handle": "colgatearabia"
+  },
+  {
+    "brand": "Pantene",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "pantene.arabia",
+    "tiktok_handle": "pantene.arabia"
+  },
+  {
+    "brand": "Sunsilk",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "sunsilkarabia",
+    "tiktok_handle": "sunsilkarabia"
+  },
+  {
+    "brand": "Nice and Lovely",
+    "category": "Skin Care",
+    "region": "East Africa",
+    "instagram_handle": "niceandlovely_ea",
+    "tiktok_handle": "niceandlovely_ea"
+  },
+  {
+    "brand": "Hobby East Africa",
+    "category": "Hair Care/Skin Care",
+    "region": "East Africa",
+    "instagram_handle": "hobby_ea",
+    "tiktok_handle": "hobby_ea"
+  },
+  {
+    "brand": "Garnier",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "garnierarabia",
+    "tiktok_handle": "garnierarabia"
+  },
+  {
+    "brand": "Lush Hair",
+    "category": "Hair Care",
+    "region": "West Africa",
+    "instagram_handle": "lushhairnigeria",
+    "tiktok_handle": "lushhairnigeria"
+  },
+  {
+    "brand": "Imperial Leather",
+    "category": "Skin Care",
+    "region": "East Africa",
+    "instagram_handle": "imperialleatherke",
+    "tiktok_handle": "imperialleatherke"
+  },
+  {
+    "brand": "MegaGrowth",
+    "category": "Hair Care",
+    "region": "Africa",
+    "instagram_handle": "megagrowthnigeria",
+    "tiktok_handle": "megagrowthnigeria"
+  },
+  {
+    "brand": "Dark and Lovely",
+    "category": "Hair Care",
+    "region": "Africa",
+    "instagram_handle": "darkandlovelyafrica",
+    "tiktok_handle": "darkandlovelyafrica"
+  },
+  {
+    "brand": "ORS Olive Oil",
+    "category": "Hair Care",
+    "region": "Africa",
+    "instagram_handle": "orsoliveoil_africa",
+    "tiktok_handle": "orsoliveoil_africa"
+  },
+  {
+    "brand": "Dabur",
+    "category": "Oral Care",
+    "region": "West Africa",
+    "instagram_handle": "daburherbalng",
+    "tiktok_handle": "daburherbalng"
+  },
+  {
+    "brand": "Clear",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "cleararabia",
+    "tiktok_handle": "cleararabia"
+  },
+  {
+    "brand": "Nivea Men",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "niveamen.me",
+    "tiktok_handle": "niveamen.me"
+  },
+  {
+    "brand": "Dabur",
+    "category": "Health Care",
+    "region": "Arabia",
+    "instagram_handle": "daburhealthcarearabia",
+    "tiktok_handle": "daburhealthcarearabia"
+  },
+  {
+    "brand": "Dettol Arabia",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "dettolarabia",
+    "tiktok_handle": "dettolarabia"
+  },
+  {
+    "brand": "Vatika Curls",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "vatika.curls",
+    "tiktok_handle": "vatika.curls"
+  },
+  {
+    "brand": "Dove Men Arabia",
+    "category": "Hair Care/Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "dovemenarabia",
+    "tiktok_handle": "dovemenarabia"
+  },
+  {
+    "brand": "Dabur",
+    "category": "Hair Care/Oral care",
+    "region": "Uzbek",
+    "instagram_handle": "dabur.uzbek",
+    "tiktok_handle": "dabur.uzbek"
+  },
+  {
+    "brand": "Dabur",
+    "category": "Hair Care/Oral care",
+    "region": "Kazak",
+    "instagram_handle": "dabur.kazakh",
+    "tiktok_handle": "dabur.kazakh"
+  },
+  {
+    "brand": "Imperial Leather",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "imperialleatherarabia",
+    "tiktok_handle": "imperialleatherarabia"
+  },
+  {
+    "brand": "Parachute",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "parachuteadvansedarabia",
+    "tiktok_handle": "parachuteadvansedarabia"
+  },
+  {
+    "brand": "Parachute Amla Arabia",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "parachuteamlaarabia",
+    "tiktok_handle": "parachuteamlaarabia"
+  },
+  {
+    "brand": "Dabur Iraq",
+    "category": "Hair Care/Skin Care",
+    "region": "Iraq",
+    "instagram_handle": "dabur.iraq",
+    "tiktok_handle": "dabur.iraq"
+  },
+  {
+    "brand": "ORS hair care",
+    "category": "Hair Care",
+    "region": "South Africa",
+    "instagram_handle": "orshaircare_sa",
+    "tiktok_handle": "orshaircare_sa"
+  },
+  {
+    "brand": "Hask UAE",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "haskuae",
+    "tiktok_handle": "haskuae"
+  },
+  {
+    "brand": "ORS EA",
+    "category": "Hair Care",
+    "region": "East Africa",
+    "instagram_handle": "orsoliveoil_ea",
+    "tiktok_handle": "orsoliveoil_ea"
+  },
+  {
+    "brand": "Gillette Venus",
+    "category": "Depilatory",
+    "region": "Global",
+    "instagram_handle": "gillettevenus",
+    "tiktok_handle": "gillettevenus"
+  },
+  {
+    "brand": "L'Oreal",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "lorealmiddleeast",
+    "tiktok_handle": "lorealparisarabia"
+  },
+  {
+    "brand": "Head & Shoulders",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "headandshouldersar",
+    "tiktok_handle": "headandshoulders.ar"
+  },
+  {
+    "brand": "Vatika Menz",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "vatikamen",
+    "tiktok_handle": "vatikamenz"
+  },
+  {
+    "brand": "Fem",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "femarabia",
+    "tiktok_handle": "fem.arabia"
+  },
+  {
+    "brand": "Herbal Essences",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "herbalessencesarabia",
+    "tiktok_handle": "herbalessences.arabia"
+  },
+  {
+    "brand": "MamaEarth Arabia",
+    "category": "Hair Care/Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "mamaeartharabia",
+    "tiktok_handle": "mamaearth.arabia"
+  },
+  {
+    "brand": "CloseUp",
+    "category": "Oral Care",
+    "region": "Arabia",
+    "instagram_handle": "closeuparabia",
+    "tiktok_handle": "closeup.arabia"
+  },
+  {
+    "brand": "Crest",
+    "category": "Oral Care",
+    "region": "Arabia",
+    "instagram_handle": "crestarabia",
+    "tiktok_handle": "crest"
+  },
+  {
+    "brand": "Dermoviva",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "dermovivausa",
+    "tiktok_handle": "dermovivaarabia"
+  },
+  {
+    "brand": "Lifebuoy Arabia",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "lifebuoyarabia",
+    "tiktok_handle": "lifebuoy.arabia"
+  },
+  {
+    "brand": "Vatika Egypt",
+    "category": "Hair Care",
+    "region": "Egypt",
+    "instagram_handle": "(no username)",
+    "tiktok_handle": "vatikaegypt"
+  },
+  {
+    "brand": "Vatika",
+    "category": "Hair Care",
+    "region": "Ethiopia",
+    "instagram_handle": "vatika.ethiopia",
+    "tiktok_handle": "vatikaethiopia"
+  },
+  {
+    "brand": "Lux Arabia",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "luxarabia",
+    "tiktok_handle": "lux.arabia"
+  },
+  {
+    "brand": "Herbolene",
+    "category": "Skin Care",
+    "region": "Middle East",
+    "instagram_handle": "herboleneme",
+    "tiktok_handle": "daburherbolene"
+  },
+  {
+    "brand": "Princess Amira Amla Kids",
+    "category": "Hair Care",
+    "region": "Arabia",
+    "instagram_handle": "princessamira_official",
+    "tiktok_handle": "princessamira.official"
+  },
+  {
+    "brand": "Nair",
+    "category": "Hair Removal",
+    "region": "Arabia",
+    "instagram_handle": "nairarabia",
+    "tiktok_handle": "nair.arabiaofficial"
+  },
+  {
+    "brand": "Garnier",
+    "category": "Hair Care",
+    "region": "KSA",
+    "instagram_handle": "—",
+    "tiktok_handle": "garnierksa"
+  },
+  {
+    "brand": "Lush Hair",
+    "category": "Hair Care",
+    "region": "East Africa",
+    "instagram_handle": "—",
+    "tiktok_handle": "lush_hair_kenya"
+  },
+  {
+    "brand": "TCB Naturals",
+    "category": "Hair Care",
+    "region": "Africa",
+    "instagram_handle": "—",
+    "tiktok_handle": "tcbnaturals"
+  },
+  {
+    "brand": "MegaGrowth",
+    "category": "Hair Care",
+    "region": "Ghana",
+    "instagram_handle": "—",
+    "tiktok_handle": "officialmegagrowthgh"
+  },
+  {
+    "brand": "Mikalla",
+    "category": "Hair Care/Skin Care",
+    "region": "Africa",
+    "instagram_handle": "—",
+    "tiktok_handle": "mikallaessentials"
+  },
+  {
+    "brand": "Dark and Lovely",
+    "category": "Hair Care",
+    "region": "Global",
+    "instagram_handle": "—",
+    "tiktok_handle": "darkandlovely"
+  },
+  {
+    "brand": "Pepsodent West Africa",
+    "category": "Oral Care",
+    "region": "East Africa",
+    "instagram_handle": "—",
+    "tiktok_handle": "pepsodent.ea"
+  },
+  {
+    "brand": "Pepsodent Nigeria",
+    "category": "Oral Care",
+    "region": "West Africa",
+    "instagram_handle": "—",
+    "tiktok_handle": "pepsodentnigeria"
+  },
+  {
+    "brand": "Cosrmo Cosmetics UAE",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "cosmocosmeticsuae",
+    "tiktok_handle": "cosmocosmetics_official"
+  },
+  {
+    "brand": "Fem",
+    "category": "Depilatory",
+    "region": "Africa",
+    "instagram_handle": "fem__africa",
+    "tiktok_handle": "fem_africa"
+  },
+  {
+    "brand": "Dabur East Africa",
+    "category": "Oral Care",
+    "region": "East Africa",
+    "instagram_handle": "dabur_eastafrica",
+    "tiktok_handle": "dabur_ea"
+  },
+  {
+    "brand": "Cerave",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "—",
+    "tiktok_handle": "ceravearabia"
+  },
+  {
+    "brand": "ORS Olive Oil",
+    "category": "Hair Care",
+    "region": "Nigeria",
+    "instagram_handle": "—",
+    "tiktok_handle": "orsoliveoil_nigeria"
+  },
+  {
+    "brand": "Dove",
+    "category": "Hair Care/Skin Care",
+    "region": "Global",
+    "instagram_handle": "dove",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Neutrogena",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "neutrogename",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Nivea",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "niveame",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Ponds",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "pondsarabia",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Palmolive",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "palmolive.arabia",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Olay",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "olay.arabia",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Veet",
+    "category": "Hair Removal",
+    "region": "Arabia",
+    "instagram_handle": "veetarabia",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Sensodyne",
+    "category": "Oral Care",
+    "region": "Arabia",
+    "instagram_handle": "sensodynearabia",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Johnsons",
+    "category": "Skin Care",
+    "region": "Middle East",
+    "instagram_handle": "johnsonsmiddleeast",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Vatika",
+    "category": "Hair Care",
+    "region": "Global",
+    "instagram_handle": "vatikaayurveda",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Hobby",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "hobbycosmeticsarabia",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Dermoviva Baby MiddleEast",
+    "category": "Skin Care",
+    "region": "Arabia",
+    "instagram_handle": "dermovivababy",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Dabur",
+    "category": "Oral Care",
+    "region": "Egypt",
+    "instagram_handle": "dabur_miswak",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Dabur Red",
+    "category": "Oral Care",
+    "region": "India",
+    "instagram_handle": "daburredofficial",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Sensodyne Gulf",
+    "category": "Oral Care",
+    "region": "Arabia",
+    "instagram_handle": "sensodynegulf",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Sensodyne KSA",
+    "category": "Oral Care",
+    "region": "Arabia",
+    "instagram_handle": "sensodyneksa",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "7 oils in one",
+    "category": "Hair Care",
+    "region": null,
+    "instagram_handle": "7oilsinoneinternational",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Kesh King",
+    "category": "Hair Care",
+    "region": null,
+    "instagram_handle": "keshking_international",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Dabur Amla India",
+    "category": "Hair Care",
+    "region": "India",
+    "instagram_handle": "daburamlaindia",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Vatika India",
+    "category": "Hair Care",
+    "region": "India",
+    "instagram_handle": "daburvatikahaircareindia",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Fa",
+    "category": "Skin Care",
+    "region": "Africa",
+    "instagram_handle": "fafeelfantastic",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "Dabur",
+    "category": "Oral Care",
+    "region": "India",
+    "instagram_handle": "dabur.meswak",
+    "tiktok_handle": "—"
+  },
+  {
+    "brand": "White Dent",
+    "category": "Oral Care",
+    "region": "East Africa",
+    "instagram_handle": "whitedenttz",
+    "tiktok_handle": "—"
+  }
+]

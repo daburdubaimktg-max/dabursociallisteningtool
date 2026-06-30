@@ -34,7 +34,7 @@ slice is green).
 ### Backend + tests
 ```bash
 pip install -e ".[dev]"
-pytest                       # 23 tests
+pytest                       # 40 tests (sentiment slice + growth dashboard)
 uvicorn api.main:app --reload   # http://localhost:8000
 ```
 
@@ -51,6 +51,40 @@ curl localhost:8000/kpi/net-sentiment
 ```bash
 cd dashboard && npm install && npm run dev   # proxies /api -> :8000
 ```
+
+## Competitor social-media growth — live Excel dashboard
+
+A second, self-contained slice tracks **competitor follower growth** on Instagram and
+TikTok and exports a multi-sheet Excel dashboard modelled on the source Master Social
+Tracker. This is a **reach** dimension and is kept entirely separate from sentiment
+(CLAUDE.md Rule 2 — follower counts are never blended with sentiment scores).
+
+- `config/competitors.json` — the tracked-brand taxonomy (brand → IG/TikTok handle →
+  category → region). Config-as-data, editable without a redeploy (§6).
+- `config/seed_followers.json` — the recorded historical monthly follower series
+  (≈2,000 snapshots) so the dashboard renders with real history out of the box.
+- `adapters/profile/` — follower adapter; provider-abstracted (seed/fixture by default,
+  live Apify gated on `APIFY_TOKEN`), emits normalized `FollowerSnapshot` records.
+- `growth/` — snapshot models, config loader, idempotent SQLite store
+  (dedup on `platform + handle + period`), and the seed/collect pipeline.
+- `kpi/growth.py` — MoM growth, gain leaderboard, reach share-of-voice, and IG-vs-TikTok
+  combined (separate columns, never a single fused score).
+- `dashboard_export/excel.py` — builds the live workbook (Overview, Instagram, TikTok,
+  Growth, Combined, By Category, By Region, and two native trend line charts).
+
+```bash
+# build the workbook from current data (and collect a fresh reading for a month)
+python -m scripts.build_dashboard competitor_growth_dashboard.xlsx --period 2026-06
+
+# or via the API
+curl -X POST localhost:8000/growth/seed
+curl 'localhost:8000/growth/leaderboard?platform=tiktok'
+curl -OJ localhost:8000/growth/dashboard.xlsx   # downloads the live .xlsx
+```
+
+"Live" = the workbook is regenerated from the current follower store on every build,
+so each new monthly collection appears as a new column. Re-running seed/collect is
+idempotent (updates counts in place; no duplicate rows).
 
 ## NLP backend selection
 `NLP_BACKEND=stub` (default in dev) uses the deterministic non-production stub. It is

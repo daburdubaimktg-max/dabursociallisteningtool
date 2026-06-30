@@ -214,13 +214,22 @@ items are excluded from headline numbers by default (toggle to include).
 ## 7. Repo layout (agent-friendly monorepo)
 
 ```
-adapters/    # one platform adapter per folder (tiktok/, instagram/, ...)
-pipeline/    # collect → normalize → detect → translate → score → enrich → silver → gold
-nlp/         # NLP service: /detect /score /translate contract; stub + (later) real models
-api/         # FastAPI: dashboard data + job-control endpoints
-dashboard/   # React + charting; filter state in URL
-infra/       # provisioning notes (GPU inference service, etc.)
+adapters/        # one platform adapter per folder (tiktok/, instagram/, profile/, ...)
+pipeline/        # collect → normalize → detect → translate → score → enrich → silver → gold
+nlp/             # NLP service: /detect /score /translate contract; stub + (later) real models
+api/             # FastAPI: dashboard data + job-control endpoints
+dashboard/       # React + charting; filter state in URL
+growth/          # competitor follower-growth (REACH dimension; Rule 2 — never mixed with sentiment)
+dashboard_export/# live Excel dashboard builder (openpyxl) for the growth tracker
+kpi/             # KPI rollups: net_sentiment (sentiment) + growth (reach), kept separate
+config/          # config-as-data: competitor taxonomy + seed follower series
+infra/           # provisioning notes (GPU inference service, etc.)
 ```
+
+> **Reach vs. sentiment (Rule 2) in code:** `growth/` + `dashboard_export/` track and
+> export follower growth — a *reach* signal — and import nothing from the sentiment KPI.
+> Sentiment and reach are never fused into a single number; the Combined view shows
+> Instagram and TikTok as side-by-side columns, not a blended score.
 
 Tests are the guardrail: hand-labeled MENA fixtures with golden-output pipeline tests;
 contract tests asserting each adapter emits valid normalized records; snapshot tests on
