@@ -86,6 +86,20 @@ curl -OJ localhost:8000/growth/dashboard.xlsx   # downloads the live .xlsx
 so each new monthly collection appears as a new column. Re-running seed/collect is
 idempotent (updates counts in place; no duplicate rows).
 
+### Streamlit dashboard
+An interactive web front-end over the same follower store (`streamlit_app.py`): filter
+by platform / category / region / brand / month window, with KPI tiles, a growth
+leaderboard, follower trend charts, the IG-vs-TikTok combined view, drill-down to the
+underlying snapshots, and one-click download of the live Excel workbook / filtered CSV.
+
+```bash
+pip install -e ".[app]"           # or: pip install -r requirements.txt
+streamlit run streamlit_app.py    # http://localhost:8501
+```
+
+Deployable as-is to Streamlit Community Cloud (`requirements.txt` + `streamlit_app.py`
+at the repo root). Reach only — the app reads follower counts and never sentiment.
+
 ## NLP backend selection
 `NLP_BACKEND=stub` (default in dev) uses the deterministic non-production stub. It is
 **refused in production** (`ENV=production`). The real self-hosted transformer service

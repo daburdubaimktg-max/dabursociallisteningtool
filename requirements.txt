@@ -1,0 +1,6 @@
+# Streamlit Community Cloud deployment manifest for streamlit_app.py.
+# (For local dev prefer: pip install -e ".[app]")
+streamlit>=1.40
+pandas>=2.0
+openpyxl>=3.1
+pydantic>=2.5
